@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Usuario {
+  id         String @id @default(uuid())
+  perfilId   String
+  createdAt  DateTime @default(now())
+  isDeleted  Boolean  @default(false)
+  login      String
+  email      String
+  nome       String
+  
+  perfil Perfil @relation(fields: [perfilId],references: [id])
+  @@map("usuarios")
+}
+
+model Perfil {
+  id         String @id @default(uuid())
+  createdAt  DateTime @default(now())
+  isDeleted  Boolean  @default(false)
+  valor      String
+  descricao  String
+
+  usuarios Usuario[]
+  gruposAtendimento GrupoAtendimento[]
+  @@map("perfis")
+}
+
+model GrupoAtendimento {
+  id         String @id @default(uuid())
+  perfilId   String
+  createdAt  DateTime @default(now())
+  isDeleted  Boolean  @default(false)
+  valor      String
+  descricao  String
+
+  mensagens Mensagem[]
+  menusAtendimento MenuAtendimento[]
+
+  perfil Perfil @relation(fields: [perfilId],references: [id])
+  @@map("gruposAtendimento")
+
+}
+
+model Mensagem {
+  id                   String @id @default(uuid())
+  grupoAtendimentoId   String
+  createdAt            DateTime @default(now())
+  isDeleted            Boolean  @default(false)
+  texto                String
+
+  grupoAtendimento GrupoAtendimento @relation(fields: [grupoAtendimentoId],references: [id])
+  @@map("mensagens")
+}
+
+model MenuAtendimento {
+  id                   String @id @default(uuid())
+  grupoAtendimentoId   String?
+  parentMenuId         String?
+  createdAt            DateTime @default(now())
+  isDeleted            Boolean  @default(false)
+  opcao                Int
+  descricao            String
+
+  grupoAtendimento GrupoAtendimento? @relation(fields: [grupoAtendimentoId],references: [id])
+  menuAtendimento MenuAtendimento? @relation("MenuSubmenus",fields: [parentMenuId],references: [id]) 
+  parentMenuAtendimento MenuAtendimento[] @relation("MenuSubmenus") 
+  @@map("menusAtendimento")
+}
