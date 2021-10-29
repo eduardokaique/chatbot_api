@@ -1,6 +1,8 @@
 import { AuthenticateUserController } from "@controllers/AuthenticateUserController";
 import { CreateMessageController } from "@controllers/CreateMessageController";
 import { Get3LastMessagesController } from "@controllers/GetLast3MessagesController";
+import { GrupoAtendimentoController } from "@controllers/GrupoAtendimentoController";
+import { MenuAtendimentoController } from "@controllers/MenuAtendimentoController";
 import { ProfileUserController } from "@controllers/ProfileUserController";
 import { Router } from "express";
 import { ensureAuthenticate } from "./middleware/ensureAutenticated";
@@ -15,6 +17,12 @@ router.post("/messages", ensureAuthenticate, new CreateMessageController().handl
 router.get("/messages/last3", new Get3LastMessagesController().handle);
 
 router.get("/profile", ensureAuthenticate, new ProfileUserController().handle);
+
+router.get("/menus", ensureAuthenticate, new MenuAtendimentoController().menu);
+
+router.get("/submenus", ensureAuthenticate, new MenuAtendimentoController().subMenu);
+
+router.get("/gruposAtendimento", ensureAuthenticate, new GrupoAtendimentoController().handle);
 
 
 

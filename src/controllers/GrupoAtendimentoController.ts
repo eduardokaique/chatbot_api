@@ -1,10 +1,10 @@
 import { ProfileUserService } from "@services/ProfileUserService";
 import { Request, Response } from  "express";
 
-
-class ProfileUserController {
+  
+class GrupoAtendimentoController {
     async handle(request: Request, response: Response) {
-        const { userId } = request;
+        const { userId } = request.body;
 
         const service = new ProfileUserService();
 
@@ -15,4 +15,4 @@ class ProfileUserController {
     }
 }
 
-export { ProfileUserController }
+export { GrupoAtendimentoController }

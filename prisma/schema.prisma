@@ -15,8 +15,10 @@ model Usuario {
   login      String
   email      String
   nome       String
+  password   String?
   
   perfil Perfil @relation(fields: [perfilId],references: [id])
+  mensagens Mensagem[]
   @@map("usuarios")
 }
 
@@ -50,11 +52,13 @@ model GrupoAtendimento {
 
 model Mensagem {
   id                   String @id @default(uuid())
+  usuarioId            String?
   grupoAtendimentoId   String
   createdAt            DateTime @default(now())
   isDeleted            Boolean  @default(false)
   texto                String
 
+  usuario Usuario? @relation(fields: [usuarioId],references: [id])
   grupoAtendimento GrupoAtendimento @relation(fields: [grupoAtendimentoId],references: [id])
   @@map("mensagens")
 }
