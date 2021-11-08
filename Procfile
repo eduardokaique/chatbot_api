@@ -1,1 +1,1 @@
-web: ts-node-dev -r tsconfig-paths/register --exit-child src/server.ts
+web: npm run dev
