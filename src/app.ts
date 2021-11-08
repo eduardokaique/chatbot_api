@@ -35,4 +35,7 @@ app.get("/signin/callback", (request, response) =>  {
     return response.json(code);
 });
 
+var port = process.env.PORT || 8080;
+serverHttp.listen(port, () => console.log(`🚀 Server is run on PORT ${port}`));
+
 export { serverHttp, io };
