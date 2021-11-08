@@ -5,6 +5,10 @@
     "strict": false,                         
     "esModuleInterop": true,                 
     "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
     "baseUrl": ".",
     "paths": {
       "@controllers/*": ["./src/controllers/*"],
