@@ -9,7 +9,8 @@
   "scripts": {
     "start": "ts-node-dev -r tsconfig-paths/register --exit-child src/server.ts",
     "dev": "ts-node-dev -r tsconfig-paths/register --exit-child src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
