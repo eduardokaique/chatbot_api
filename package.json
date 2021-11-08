@@ -1,6 +1,9 @@
 {
   "name": "node_heat",
   "version": "1.0.0",
+  "engines": {
+    "nodes": "16.8.0"
+  },
   "description": "",
   "main": "src/server.ts",
   "scripts": {
