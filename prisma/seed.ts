@@ -100,7 +100,7 @@ async function main() {
           {
             id: 'e94f2099-6f83-49b3-bc35-4999b03b23eb',
             isDeleted: false,
-            opcao: 1,
+            opcao: 2,
             descricao: 'Renegociação',
             grupoAtendimentoId: 'a37e344b-020a-457a-81b1-96e02c4bbb0a'
         }]
@@ -108,11 +108,35 @@ async function main() {
     }
   })
 
+  const menuSuporteTecnico = await prisma.menuAtendimento.upsert({
+    where: { id: 'ccb87fde-04be-4b66-a617-36a775e92105' },
+    update: {},
+    create: {
+      id: 'ccb87fde-04be-4b66-a617-36a775e92105',
+      isDeleted: false,
+      opcao: 2,
+      descricao: 'Suporte Técnico',
+    }
+  })
+
+  const menuVendas = await prisma.menuAtendimento.upsert({
+    where: { id: '96ca5db4-7706-4396-b5e8-811a987b6a22' },
+    update: {},
+    create: {
+      id: '96ca5db4-7706-4396-b5e8-811a987b6a22',
+      isDeleted: false,
+      opcao: 3,
+      descricao: 'Vendas',
+    }
+  })
+
   console.log({ usuarioAdm,
                 usuarioSupervisor,
                 usuarioOperador,
                 grupoAtendimentoFinanceiro,
-                menuFinanceiro })
+                menuFinanceiro,
+                menuSuporteTecnico,
+                menuVendas })
 }
 
 main()

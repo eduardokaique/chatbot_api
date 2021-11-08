@@ -12,15 +12,15 @@ const router = Router();
 
 router.post("/authenticate", new AuthenticateUserController().handle)
 
-router.post("/messages", ensureAuthenticate, new CreateMessageController().handle);
+router.post("/messages", new CreateMessageController().handle);
 
 router.get("/messages/last3", new Get3LastMessagesController().handle);
 
 router.get("/profile", ensureAuthenticate, new ProfileUserController().handle);
 
-router.get("/menus", ensureAuthenticate, new MenuAtendimentoController().menu);
+router.get("/menus", new MenuAtendimentoController().menu);
 
-router.get("/submenus", ensureAuthenticate, new MenuAtendimentoController().subMenu);
+router.post("/submenus", new MenuAtendimentoController().subMenu);
 
 router.get("/gruposAtendimento", ensureAuthenticate, new GrupoAtendimentoController().handle);
 

@@ -1,5 +1,4 @@
 import { MenuAtendimentoService } from "@services/MenuAtendimentoService";
-import { ProfileUserService } from "@services/ProfileUserService";
 import { Request, Response } from  "express";
 
 

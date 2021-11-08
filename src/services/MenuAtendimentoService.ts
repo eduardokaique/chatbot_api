@@ -14,8 +14,8 @@ class MenuAtendimentoService {
     async SubMenu(parentMenuId: string) {
         const user = await prismaClient.menuAtendimento.findMany({
             where: {
-               parentMenuId: parentMenuId
-            }
+               parentMenuId: parentMenuId,
+            },
         });
 
         return user;
