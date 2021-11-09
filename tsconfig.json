@@ -5,15 +5,20 @@
     "strict": false,                         
     "esModuleInterop": true,                 
     "forceConsistentCasingInFileNames": true,
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
-    "noUnusedParameters": false,
-    "noUnusedLocals": false,
     "baseUrl": ".",
     "paths": {
       "@controllers/*": ["./src/controllers/*"],
       "@services/*": ["./src/services/*"],
     },
-    "typeRoots": ["./src/@types", "node_modules/@types"]
+    "typeRoots": ["./src/@types", "node_modules/@types"],
+    "allowSyntheticDefaultImports": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "lib": ["ES2018"],
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist"
+
   }
 }
