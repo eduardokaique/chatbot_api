@@ -35,4 +35,9 @@ app.get("/signin/callback", (request, response) =>  {
     return response.json(code);
 });
 
+
+app.get("", (request, response) =>  {
+    return response.json({Sistema: "Api ChatBot PR1A5", Status: "Healthy"});
+});
+
 export { serverHttp, io };
