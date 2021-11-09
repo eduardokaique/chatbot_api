@@ -1,4 +1,4 @@
-import { ProfileUserService } from "@services/ProfileUserService";
+import { ProfileUserService } from "../services/ProfileUserService";
 import { Request, Response } from  "express";
 
 

@@ -1,9 +1,9 @@
-import { AuthenticateUserController } from "@controllers/AuthenticateUserController";
-import { CreateMessageController } from "@controllers/CreateMessageController";
-import { Get3LastMessagesController } from "@controllers/GetLast3MessagesController";
-import { GrupoAtendimentoController } from "@controllers/GrupoAtendimentoController";
-import { MenuAtendimentoController } from "@controllers/MenuAtendimentoController";
-import { ProfileUserController } from "@controllers/ProfileUserController";
+import { AuthenticateUserController } from "../src/controllers/AuthenticateUserController";
+import { CreateMessageController } from "../src/controllers/CreateMessageController";
+import { Get3LastMessagesController } from "../src/controllers/GetLast3MessagesController";
+import { GrupoAtendimentoController } from "../src/controllers/GrupoAtendimentoController";
+import { MenuAtendimentoController } from "../src/controllers/MenuAtendimentoController";
+import { ProfileUserController } from "../src/controllers/ProfileUserController";
 import { Router } from "express";
 import { ensureAuthenticate } from "./middleware/ensureAutenticated";
 

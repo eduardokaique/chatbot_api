@@ -1,6 +1,6 @@
-import { AuthenticateUserService } from "@services/AuthenticateUserService";
-import { CreateMessageService } from "@services/CreateMessageServices";
-import { GetLast3MessageService } from "@services/GetLast3MessagesService";
+import { AuthenticateUserService } from "../services/AuthenticateUserService";
+import { CreateMessageService } from "../services/CreateMessageServices";
+import { GetLast3MessageService } from "../services/GetLast3MessagesService";
 import { Request, Response } from  "express";
 
 

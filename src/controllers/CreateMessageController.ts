@@ -1,5 +1,5 @@
-import { AuthenticateUserService } from "@services/AuthenticateUserService";
-import { CreateMessageService } from "@services/CreateMessageServices";
+import { AuthenticateUserService } from "../services/AuthenticateUserService";
+import { CreateMessageService } from "../services/CreateMessageServices";
 import { Request, Response } from  "express";
 
 

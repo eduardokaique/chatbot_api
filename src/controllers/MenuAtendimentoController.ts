@@ -1,4 +1,4 @@
-import { MenuAtendimentoService } from "@services/MenuAtendimentoService";
+import { MenuAtendimentoService } from "../services/MenuAtendimentoService";
 import { Request, Response } from  "express";
 
 
