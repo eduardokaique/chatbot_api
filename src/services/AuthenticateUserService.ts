@@ -1,4 +1,4 @@
-import prismaClient from "src/prisma";
+import prismaClient from "../prisma";
 import { sign } from "jsonwebtoken"
 
 class AuthenticateUserService {

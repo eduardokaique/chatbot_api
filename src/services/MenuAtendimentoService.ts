@@ -1,4 +1,4 @@
-import prismaClient from "src/prisma"
+import prismaClient from "../prisma"
 
 class MenuAtendimentoService {
     async Menu() {
